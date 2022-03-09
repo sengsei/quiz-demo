@@ -33,4 +33,8 @@ public class QuestionService {
         Optional<Question> questionNew = questionRepository.findById(id);
         return questionRepository.save(question);
     }
+
+    public List<Question> getAllQuestions() {
+        return questionRepository.findAll();
+    }
 }

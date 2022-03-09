@@ -24,7 +24,7 @@ public class QuestionController {
         return ResponseEntity.of(questionService.findById(id));
     }
 
-    @GetMapping
+    @GetMapping("/search")
     public List<Question> findQuestionByCategory(@RequestParam String category){
         return questionService.findByCategory(category);
     }
@@ -38,5 +38,10 @@ public class QuestionController {
     public Question updateQuestion(@PathVariable String id, @RequestBody Question question){
         questionService.updateQuestion(id, question);
         return questionService.updateQuestion(id, question);
+    }
+
+    @GetMapping
+    public List<Question> getAllQuestions(){
+        return questionService.getAllQuestions();
     }
 }
