@@ -3,7 +3,7 @@ package de.neuefische.quizdemo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -23,10 +23,6 @@ public class QuestionService {
 
     public List<Question> findByCategory(String category) {
         return questionRepository.findByCategory(category);
-    }
-
-    public void deleteById(String id) {
-        questionRepository.deleteById(id);
     }
 
     public Question updateQuestion(String id, Question question) {

@@ -29,11 +29,6 @@ public class QuestionController {
         return questionService.findByCategory(category);
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable String id){
-        questionService.deleteById(id);
-    }
-
     @PutMapping("/{id}")
     public Question updateQuestion(@PathVariable String id, @RequestBody Question question){
         questionService.updateQuestion(id, question);
