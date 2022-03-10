@@ -44,4 +44,9 @@ public class QuestionController {
     public List<Question> getAllQuestions(){
         return questionService.getAllQuestions();
     }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<Question> patchQuestion(@PathVariable String id, @RequestBody Question question){
+        return ResponseEntity.of(questionService.patchQuestion(id, question));
+    }
 }

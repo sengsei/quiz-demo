@@ -37,4 +37,22 @@ public class QuestionService {
     public List<Question> getAllQuestions() {
         return questionRepository.findAll();
     }
+
+    public Optional<Question> patchQuestion(String id, Question question) {
+
+        Optional<Question> optionalQuestion = questionRepository.findById(id);
+        if (optionalQuestion.isPresent()) {
+            Question questionFromDatabase = optionalQuestion.get();
+            if (question.getQuestion() != null) {
+                questionFromDatabase.setQuestion(question.getQuestion());
+            }
+            if (question.getCategory() != null) {
+                questionFromDatabase.setCategory(question.getCategory());
+            }
+            return Optional.of(questionRepository.save(questionFromDatabase));
+        } else {
+            return Optional.empty();
+        }
+
+    }
 }

@@ -33,6 +33,8 @@ class QuizDemoApplicationTests {
         assertThat(getResponse.getBody().getId()).isNotNull();
         assertThat(getResponse.getBody().getQuestion()).isEqualTo("Was ist ein Compiler?");
         assertThat(getResponse.getBody().getCategory()).isEqualTo("Java");
+
+
     }
 
 }
